@@ -1,0 +1,8 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+## General rules for React app
+
+- State should be kept upon page refresh

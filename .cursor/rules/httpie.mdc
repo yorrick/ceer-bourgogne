@@ -1,0 +1,9 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Httpie
+
+- Always use `httpie` for perform http calls in the terminal

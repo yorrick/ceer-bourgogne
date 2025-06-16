@@ -1,0 +1,11 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Context7 documentation
+
+- Always use the Context7 MCP server to reference documentation for Libraries like Pulumi, FastAPI or Pydantic.
+- For the tokens, start with 5000 but then increase to 20000 if your first search didn't give relevant documentation.
+- Only search three times maximum for any specific piece of documentation. If you don't get what you need, use the Brave MCP server to perform a wider search.

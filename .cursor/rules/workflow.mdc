@@ -1,0 +1,15 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Workflow Rules
+
+Use port 3001 to run the local server, and run it with `npm run dev -- --port=3001`
+
+
+
+- After EVERY change, use "npm run snapshot" to take a snapshot of the dashboard running locally. Store the snapshots in snapshots/
+- Check snapshot to make sure feature has been implemented correctly
+- If needed, simulate a scenario with Playwright to make sure feature works

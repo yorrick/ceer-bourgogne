@@ -1,0 +1,13 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# Git usage
+
+- NEVER use "git push force"
+- NEVER use "git rebase"
+- NEVER use "git reset"
+- push with "git push origin HEAD"
+- Create meaningful commit messages

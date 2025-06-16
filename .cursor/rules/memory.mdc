@@ -1,0 +1,9 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+## Memory usage
+
+- Whenever an issue took more than 3 prompts to be fixed, or an issue was complex, and solution was found, add it to memory
+- Whenever we're not succeeding to solve an issue, look into memory to check whether solution was found previously
