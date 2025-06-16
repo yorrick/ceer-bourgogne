@@ -92,4 +92,19 @@ export function getPageBySlug(slug: string): Page | null {
     content,
     lastModified: data.lastModified,
   } as Page;
+}
+
+export function getAllPageSlugs(): { slug: string }[] {
+  const pagesDirectory = path.join(contentDirectory, 'pages');
+  
+  if (!fs.existsSync(pagesDirectory)) {
+    return [];
+  }
+
+  const filenames = fs.readdirSync(pagesDirectory);
+  return filenames
+    .filter(name => name.endsWith('.md') || name.endsWith('.mdx'))
+    .map(name => ({
+      slug: name.replace(/\.(md|mdx)$/, ''),
+    }));
 } 

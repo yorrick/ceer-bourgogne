@@ -1,15 +1,10 @@
-import { getPageBySlug, getAllPosts } from '@/lib/content'; // Assuming you might want to link to posts
+import { getPageBySlug, getAllPageSlugs } from '@/lib/content'; // Assuming you might want to link to posts
 import { notFound } from 'next/navigation';
-import { FC } from 'react';
 import ReactMarkdown from 'react-markdown';
 
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
-
-const Page: FC<PageProps> = ({ params }) => {
+// The FC type and explicit interface are often not needed and can cause type issues.
+// We can simplify the props definition.
+export default function Page({ params }: { params: { slug: string } }) {
   const page = getPageBySlug(params.slug);
 
   if (!page) {
@@ -24,13 +19,10 @@ const Page: FC<PageProps> = ({ params }) => {
       </article>
     </div>
   );
-};
+}
 
 // If you want to pre-render these pages at build time
-// export async function generateStaticParams() {
-//   // This needs a function to list all page slugs, e.g., getAllPageSlugs()
-//   // For now, we can disable it or implement it in content.ts
-//   return []; 
-// }
-
-export default Page; 
+export async function generateStaticParams() {
+  const slugs = getAllPageSlugs();
+  return slugs;
+} 
