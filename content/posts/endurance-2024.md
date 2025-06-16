@@ -3,7 +3,7 @@ title: "Endurance du 26 mai 2024"
 date: "2024-06-15"
 category: "Compétition"
 excerpt: "Le 26 mai 2024, le CEERB a organisé sa 1ère endurance à Messigny-et-Vantoux."
-featuredImage: "https://www.ceerbourgogne.com/wp-content/uploads/freshizer/4528988b4a984f8a228d890cb98de2bb_Photo12-768-432-c-90.jpg"
+featuredImage: "/images/blog/endurance-2024.jpg"
 author: "CEER Bourgogne"
 ---
 

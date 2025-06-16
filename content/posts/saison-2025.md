@@ -3,7 +3,7 @@ title: "La saison 2025 démarre !"
 date: "2024-11-05"
 category: "Non classé"
 excerpt: "Avez-vous pensé à renouveler votre licence FFE ? Vous pouvez passer par le CEER Bourgogne pour prendre votre licence."
-featuredImage: "https://www.ceerbourgogne.com/wp-content/uploads/freshizer/a8068a220cd9b402a2c932425ed81e49_16992082_1709288376027967_2946207718229220946_o-768-432-c-90.jpg"
+featuredImage: "/images/blog/saison-2025.jpg"
 author: "CEER Bourgogne"
 ---
 
