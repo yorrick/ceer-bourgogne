@@ -1,16 +1,11 @@
 import { getPostBySlug, getAllPosts } from '@/lib/content';
 import { notFound } from 'next/navigation';
-import { FC } from 'react';
 import ReactMarkdown from 'react-markdown';
 
-interface BlogPostPageProps {
-  params: {
-    slug: string;
-  };
-}
-
-const BlogPostPage: FC<BlogPostPageProps> = ({ params }) => {
-  const post = getPostBySlug(params.slug);
+// Next.js 15 expects params to be awaited in dynamic routes
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post) {
     notFound();
@@ -30,13 +25,11 @@ const BlogPostPage: FC<BlogPostPageProps> = ({ params }) => {
       </article>
     </div>
   );
-};
+}
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
   return posts.map(post => ({
     slug: post.slug,
   }));
-}
-
-export default BlogPostPage; 
+} 

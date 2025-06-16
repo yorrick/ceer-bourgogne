@@ -25,20 +25,20 @@
         "next-mdx-remote": "^5.0.0",
         "react": "^18.3.1",
         "react-dom": "^18.3.1",
-        "react-markdown": "^10.1.0",
-        "rimraf": "^5.0.7"
+        "react-markdown": "^10.1.0"
     },
     "devDependencies": {
         "@eslint/eslintrc": "^3.2.0",
         "@playwright/test": "^1.53.0",
         "@types/node": "^20.17.10",
-        "@types/react": "^18.3.17",
+        "@types/react": "^18.2.0",
         "@types/react-dom": "^18.3.5",
         "autoprefixer": "^10.4.20",
         "eslint": "^8.57.1",
         "eslint-config-next": "15.1.4",
         "playwright": "^1.53.0",
         "postcss": "^8",
+        "rimraf": "^5.0.7",
         "tailwindcss": "^3.4.1",
         "typescript": "^5"
     },

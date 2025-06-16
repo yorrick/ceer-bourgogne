@@ -2,10 +2,10 @@ import { getPageBySlug, getAllPageSlugs } from '@/lib/content'; // Assuming you 
 import { notFound } from 'next/navigation';
 import ReactMarkdown from 'react-markdown';
 
-// The FC type and explicit interface are often not needed and can cause type issues.
-// We can simplify the props definition.
-export default function Page({ params }: { params: { slug: string } }) {
-  const page = getPageBySlug(params.slug);
+// Next.js 15 expects params to be awaited in dynamic routes
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const page = getPageBySlug(slug);
 
   if (!page) {
     notFound();

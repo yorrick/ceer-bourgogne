@@ -25,11 +25,20 @@ Le CEER Bourgogne est une association loi 1901 agréée jeunesse et sport, dédi
 
 ```bash
 # Cloner le repository
-git clone https://github.com/yorrickjansen/ceer-bourgogne.git
+git clone https://github.com/yorrick/ceer-bourgogne.git
 cd ceer-bourgogne
 
 # Installer les dépendances
 npm install
+
+# Initialiser Git (si pas déjà fait)
+git init
+git add .
+git commit -m "Initial commit"
+
+# Ajouter le remote GitHub
+git remote add origin https://github.com/yorrick/ceer-bourgogne.git
+git push -u origin main
 
 # Lancer le serveur de développement
 npm run dev
@@ -127,7 +136,7 @@ git add .
 git commit -m "Initial commit"
 
 # Ajouter le remote GitHub
-git remote add origin https://github.com/votre-username/ceer-bourgogne.git
+git remote add origin https://github.com/yorrick/ceer-bourgogne.git
 git push -u origin main
 ```
 
