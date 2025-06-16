@@ -28,7 +28,7 @@ export default function Home() {
 
       {/* Latest News Section */}
       <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Dernières nouvelles
@@ -84,7 +84,7 @@ export default function Home() {
 
       {/* About Endurance Section */}
       <section className="py-16">
-        <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
@@ -132,7 +132,7 @@ export default function Home() {
 
       {/* Quick Access Section */}
       <section className="py-16 bg-gray-900 text-white">
-        <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">À LA UNE</h2>
             <div className="w-24 h-1 bg-green-600 mx-auto"></div>
@@ -189,7 +189,7 @@ export default function Home() {
 
       {/* About CEERB Section */}
       <section className="py-16">
-        <div className="container mx-auto px-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Le Comité d&apos;Endurance Équestre Régional de Bourgogne
