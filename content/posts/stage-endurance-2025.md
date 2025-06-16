@@ -3,7 +3,7 @@ title: "Stage d'endurance 09 février 2025"
 date: "2024-11-05"
 category: "Non classé"
 excerpt: "Préparez la saison 2025 avec Emmanuelle FERNANDEZ, une cavalière d'endurance qui travaille en partenariat avec l'écurie Blue ride chez Virginie ATGER du débourrage aux qualifications CEI."
-featuredImage: "/images/stage-2025.jpg"
+featuredImage: "https://www.ceerbourgogne.com/wp-content/uploads/freshizer/9b25fd4adb160d75ca7a4874e58eefe5_PhotoStage2025-1-768-432-c-90.png"
 author: "CEER Bourgogne"
 ---
 
