@@ -31,6 +31,7 @@ export function getAllPosts(): BlogPost[] {
         author: data.author || '',
       } as BlogPost;
     })
+    .filter(post => new Date(post.date) <= new Date())
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
   return posts;

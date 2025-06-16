@@ -1,8 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import NoSSR from '../components/NoSSR';
+import { getAllPosts } from '@/lib/content';
+import { format } from 'date-fns';
+import { fr } from 'date-fns/locale';
 
 export default function Home() {
+  const latestPosts = getAllPosts().slice(0, 3);
+
   return (
     <NoSSR>
     <div>
@@ -23,7 +28,7 @@ export default function Home() {
 
       {/* Latest News Section */}
       <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Dernières nouvelles
@@ -32,60 +37,54 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* News Item 1 */}
-            <article className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="h-48 bg-gray-300"></div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">
-                  <Link href="/blog/stage-endurance-2025" className="hover:text-green-600">
-                    Stage d&apos;endurance 09 février 2025
+            {latestPosts.map((post) => (
+              <article key={post.slug} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow flex flex-col">
+                <Link href={`/blog/${post.slug}`}>
+                  <div
+                    className="h-48 bg-gray-300 relative bg-cover bg-center"
+                    style={{ backgroundImage: `url(${post.featuredImage || '/images/default-image.jpg'})` }}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                    <div className="absolute top-4 left-4">
+                      <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm">
+                        {post.category}
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+                <div className="p-6 flex-grow flex flex-col">
+                  <div className="flex items-center text-sm text-gray-500 mb-2">
+                    <time dateTime={post.date}>
+                      {format(new Date(post.date), 'dd MMMM yyyy', { locale: fr })}
+                    </time>
+                  </div>
+                  <h3 className="text-xl font-semibold mb-2 flex-grow">
+                    <Link href={`/blog/${post.slug}`} className="hover:text-green-600">
+                      {post.title}
+                    </Link>
+                  </h3>
+                  <p className="text-gray-700 mb-4 line-clamp-3">
+                    {post.excerpt}
+                  </p>
+                  <Link
+                    href={`/blog/${post.slug}`}
+                    className="inline-flex items-center self-start text-green-600 hover:text-green-700 font-medium"
+                  >
+                    Lire la suite
+                    <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
                   </Link>
-                </h3>
-                <p className="text-gray-600 text-sm mb-4">5 novembre, 2024</p>
-                <p className="text-gray-700">
-                  Préparez la saison 2025 avec Emmanuelle FERNANDEZ...
-                </p>
-              </div>
-            </article>
-
-            {/* News Item 2 */}
-            <article className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="h-48 bg-gray-300"></div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">
-                  <Link href="/blog/saison-2025" className="hover:text-green-600">
-                    La saison 2025 démarre !
-                  </Link>
-                </h3>
-                <p className="text-gray-600 text-sm mb-4">5 novembre, 2024</p>
-                <p className="text-gray-700">
-                  Avez-vous pensé à renouveler votre licence FFE...
-                </p>
-              </div>
-            </article>
-
-            {/* News Item 3 */}
-            <article className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="h-48 bg-gray-300"></div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">
-                  <Link href="/blog/endurance-2024" className="hover:text-green-600">
-                    Endurance du 26 mai 2024
-                  </Link>
-                </h3>
-                <p className="text-gray-600 text-sm mb-4">15 juin, 2024</p>
-                <p className="text-gray-700">
-                  Notre 1ère endurance à Messigny...
-                </p>
-              </div>
-            </article>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
       {/* About Endurance Section */}
       <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6">
@@ -133,7 +132,7 @@ export default function Home() {
 
       {/* Quick Access Section */}
       <section className="py-16 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">À LA UNE</h2>
             <div className="w-24 h-1 bg-green-600 mx-auto"></div>
@@ -190,7 +189,7 @@ export default function Home() {
 
       {/* About CEERB Section */}
       <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               Le Comité d&apos;Endurance Équestre Régional de Bourgogne

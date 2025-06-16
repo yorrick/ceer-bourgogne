@@ -1,37 +1,11 @@
 import Link from 'next/link';
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
-
-// This would normally import from our content utilities
-// For now, we'll use static data
-const posts = [
-  {
-    slug: 'stage-endurance-2025',
-    title: "Stage d'endurance 09 février 2025",
-    date: '2024-11-05',
-    excerpt: "Préparez la saison 2025 avec Emmanuelle FERNANDEZ, une cavalière d'endurance qui travaille en partenariat avec l'écurie Blue ride chez Virginie ATGER du débourrage aux qualifications CEI.",
-    category: 'Non classé',
-    featuredImage: '/images/stage-2025.jpg'
-  },
-  {
-    slug: 'saison-2025',
-    title: 'La saison 2025 démarre !',
-    date: '2024-11-05',
-    excerpt: "Avez-vous pensé à renouveler votre licence FFE ? Vous pouvez passer par le CEER Bourgogne pour prendre votre licence.",
-    category: 'Non classé',
-    featuredImage: '/images/saison-2025.jpg'
-  },
-  {
-    slug: 'endurance-2024',
-    title: 'Endurance du 26 mai 2024',
-    date: '2024-06-15',
-    excerpt: "Notre 1ère endurance à Messigny-et-Vantoux. 45 cavaliers se sont présentés au départ.",
-    category: 'Non classé',
-    featuredImage: '/images/endurance-2024.jpg'
-  }
-];
+import { getAllPosts } from '@/lib/content';
 
 export default function BlogPage() {
+  const posts = getAllPosts();
+
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -51,7 +25,10 @@ export default function BlogPage() {
           {posts.map((post) => (
             <article key={post.slug} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
               {/* Featured Image Placeholder */}
-              <div className="h-48 bg-gray-300 relative">
+              <div
+                className="h-48 bg-gray-300 relative bg-cover bg-center"
+                style={{ backgroundImage: `url(${post.featuredImage || '/images/default-image.jpg'})` }}
+              >
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 <div className="absolute top-4 left-4">
                   <span className="bg-green-600 text-white px-3 py-1 rounded-full text-sm">

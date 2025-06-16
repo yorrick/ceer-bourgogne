@@ -25,7 +25,7 @@ Le CEER Bourgogne est une association loi 1901 agréée jeunesse et sport, dédi
 
 ```bash
 # Cloner le repository
-git clone https://github.com/votre-username/ceer-bourgogne.git
+git clone https://github.com/yorrickjansen/ceer-bourgogne.git
 cd ceer-bourgogne
 
 # Installer les dépendances
