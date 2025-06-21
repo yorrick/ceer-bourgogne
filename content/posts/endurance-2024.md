@@ -11,7 +11,7 @@ author: "CEER Bourgogne"
 
 Le 26 mai 2024, le CEERB a organisé sa 1ère endurance à Messigny-et-Vantoux.
 
-45 cavaliers se sont présentés au départ.
+45 cavaliers se sont présentés au départ de la course.
 
 Le parcours forestier, sans traversée de village, a été apprécié par l'ensemble des participants malgré une météo changeante avec quelques averses.
 
